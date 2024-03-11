@@ -1,11 +1,15 @@
 package Model;
 
+
+import Control.Tile;
+
 public class Field {
     int height;
     int width;
     int numberOfMines;
     int numberOfOpendCells = 0;
     GameState state;
+    Tile[][]
 
 
     //Constructor
@@ -26,7 +30,8 @@ public class Field {
         state = GameState.newState;
     }
 
-    public Tile[][] getTile(int x, int y){
+
+    public Tile getTile(int x, int y){
 
     }
 
