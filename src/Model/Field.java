@@ -38,17 +38,19 @@ public class Field {
     public Tile[][] getNeighboursTiles(int x, int y) {
         Tile[][] surroundingTiles = new Tile[3][3];
 
-        // Offsets for the 8 surrounding cells
-        int[] dx = {-1, -1, -1, 0, 0, 1, 1, 1};
-        int[] dy = {-1, 0, 1, -1, 1, -1, 0, 1};
+        // Adjusted logic for assigning neighbors correctly
+        int[] dx = {-1, 0, 1};
+        int[] dy = {-1, 0, 1};
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                int nx = x + dx[i] - 1;
+                int ny = y + dy[j] - 1;
 
-        for (int i = 0; i < 8; i++) {
-            int nx = x + dx[i];
-            int ny = y + dy[i];
-            if (nx >= 0 && nx < width && ny >= 0 && ny < height) {
-                surroundingTiles[nx][ny] = this.field[nx][ny];
-            } else {
-                surroundingTiles[nx][ny] = null;
+                if (nx >= 0 && nx < width && ny >= 0 && ny < height) {
+                    surroundingTiles[i][j] = this.field[nx][ny];
+                } else {
+                    surroundingTiles[i][j] = null;
+                }
             }
         }
         return surroundingTiles;
