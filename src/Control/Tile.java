@@ -62,4 +62,8 @@ public class Tile {
     public void assignNeighbors(int[][] tiles) {
         neighbours = tiles;
     }
+    public String draw()
+    {
+        return ".";
+    }
 }
