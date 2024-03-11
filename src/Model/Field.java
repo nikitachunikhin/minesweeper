@@ -1,5 +1,6 @@
 package Model;
 import Control.Tile;
+import enums.GameState;
 
 public class Field {
     protected int height;
