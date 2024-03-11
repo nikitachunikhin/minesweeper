@@ -1,15 +1,15 @@
 package Model;
 
-
+import enums.GameState;
 import Control.Tile;
 
 public class Field {
-    int height;
-    int width;
-    int numberOfMines;
-    int numberOfOpendCells = 0;
-    GameState state;
-    Tile[][]
+    protected int height;
+    protected int width;
+    protected int numberOfMines;
+    protected int numberOfOpendCells = 0;
+    protected GameState state;
+    protected Tile[][] field;
 
 
     //Constructor
@@ -26,7 +26,7 @@ public class Field {
 
     }
 
-    public void changeGameStatus(Gamestate newState){
+    public void changeGameStatus(GameState newState){
         state = GameState.newState;
     }
 
