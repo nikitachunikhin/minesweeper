@@ -1,12 +1,15 @@
 package Control;
 import enums.CellType;
 
+import java.sql.Array;
+
 public class Tile {
     protected boolean revealed;
     protected boolean flagged;
     protected int x;
     protected int y;
     protected CellType type;
+    protected int[][] neighbours;
 
     public Tile(int x, int y) {
         this.x = x;
@@ -14,6 +17,7 @@ public class Tile {
         flagged = false;
         revealed = false;
         type = CellType.EMPTY;
+        int[][] neighbours = new int[3][3];
     }
     public boolean reveal()
     {
@@ -54,5 +58,8 @@ public class Tile {
 
     public CellType getType() {
         return type;
+    }
+    public void assignNeighbors(int[][] tiles) {
+        neighbours = tiles;
     }
 }
