@@ -1,4 +1,5 @@
 package Control;
+import Model.Field;
 import enums.CellType;
 
 import java.sql.Array;
@@ -19,18 +20,25 @@ public class Tile {
         type = CellType.EMPTY;
         int[][] neighbours = new int[3][3];
     }
-    public boolean reveal()
-    {
-        if (isRevealed())
-        {
+    public boolean reveal() {
+        if (isRevealed()) {
             return false;
         }
-        else
-        {
+        else {
             revealed = true;
+            Tile[][] neighbours = Field.getNeighboursTiles(this.getX(), this.getY()); // load in the array of surrounding tiles
+
+            for (Tile[] row : neighbours) {
+                for (Tile tile : row) {
+                    if (tile != null && tile.getType() == CellType.EMPTY) {
+                        tile.reveal();
+                    }
+                }
+            }
             return true;
         }
     }
+
     public void flag()
     {
         flagged = true;

@@ -1,6 +1,6 @@
 package Control;
-
 import enums.CellType;
+import Model.Field;
 
 public class NumberedTile extends Tile{
     private int NumberOfAdjecentMines;
@@ -11,15 +11,14 @@ public class NumberedTile extends Tile{
         NumberOfAdjecentMines = numberOfAdjecentMines;
         type = CellType.NUMBERED;
     }
-    public boolean reveal()
-    {
+    public boolean reveal() {
         if (isRevealed())
         {
             return false;
         }
         else
         {
-            revealed = true;
+            revealed = true; // reveal the tile
             return true;
         }
     }
