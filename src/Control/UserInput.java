@@ -24,6 +24,7 @@ public class UserInput {
         } else {
             System.out.println("Invalid difficulty selected. Defaulting to medium.");
             getHelp();
+            selectDifficultyLevel();
         }
     }
 
