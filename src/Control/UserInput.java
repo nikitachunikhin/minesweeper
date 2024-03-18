@@ -23,8 +23,12 @@ public class UserInput {
             difficulty = input;
         } else {
             System.out.println("Invalid difficulty selected. Defaulting to medium.");
-            difficulty = "medium"; // Default to medium if invalid input
+            getHelp();
         }
+    }
+
+    public void getHelp(){
+        System.out.println("Help Info//");
     }
 
     public String[] getUserInput() {
@@ -48,6 +52,7 @@ public class UserInput {
             }
         } else {
             System.out.println("Invalid input format. Please follow the format 'action row column'.");
+            getHelp();
             action = "";
         }
     }
