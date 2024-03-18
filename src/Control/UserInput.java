@@ -33,7 +33,7 @@ public class UserInput {
     }
 
     public String[] getUserInput() {
-        System.out.println("Enter your action (reveal/mark) followed by row and column numbers (e.g., reveal 2 3):");
+        System.out.println("Enter your action (reveal/flagg/unflagg) followed by row and column numbers (e.g., reveal 2 3):");
         String input = scanner.nextLine();
         processInput(input); // Process input right here
         return new String[]{action, String.valueOf(row), String.valueOf(column)}; // Return processed values
@@ -75,10 +75,7 @@ public class UserInput {
         return difficulty;
     }
 
-    //setter
-    public void setAction(String action) {
-        this.action = action;
-    }
+
 
     public static void main(String[] args) {
         UserInput userInput = new UserInput();
