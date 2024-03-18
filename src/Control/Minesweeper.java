@@ -12,8 +12,7 @@ public class Minesweeper {
     private Field field;
     private UserInput input;
     private DrawField draw;
-    public Minesweeper()
-    {
+    public Minesweeper() {
         UserInput input = new UserInput();
         input.selectDifficultyLevel();
         String difficulty = input.getDifficulty();
@@ -88,8 +87,23 @@ public class Minesweeper {
             System.out.println("Tile is already opened or not flagged yet");
         }
     }
+    public String getAction(){
+        return input.getAction();
+    }
 
-    public static void main(String[] args) {
-        Minesweeper mc = new Minesweeper();
+    public int getRow() {
+        return input.getRow();
+    }
+
+    public int getColumn() {
+        return input.getColumn();
+    }
+
+    public Field getField() {
+        return field;
+    }
+
+    public UserInput getInput() {
+        return input;
     }
 }
