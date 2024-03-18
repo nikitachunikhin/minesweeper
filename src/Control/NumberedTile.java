@@ -3,12 +3,12 @@ import enums.CellType;
 import Model.Field;
 
 public class NumberedTile extends Tile{
-    private int NumberOfAdjecentMines;
+    private int NumberOfAdjacentMines;
     protected CellType type;
 
-    public NumberedTile(int x, int y, int numberOfAdjecentMines) {
+    public NumberedTile(int x, int y, int numberOfAdjacentMines) {
         super(x, y);
-        NumberOfAdjecentMines = numberOfAdjecentMines;
+        NumberOfAdjacentMines = numberOfAdjacentMines;
         type = CellType.NUMBERED;
     }
     public boolean reveal() {
