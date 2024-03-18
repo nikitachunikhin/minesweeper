@@ -60,6 +60,7 @@ public class UserInput {
 
     // Getters
     public String getAction() {
+        getUserInput();
         return action;
     }
 
@@ -75,13 +76,4 @@ public class UserInput {
         return difficulty;
     }
 
-
-
-    public static void main(String[] args) {
-        UserInput userInput = new UserInput();
-        userInput.selectDifficultyLevel(); // Prompt the user to select difficulty level
-        System.out.println("Difficulty Level: " + userInput.getDifficulty());
-        userInput.getUserInput();
-        System.out.println("Action: " + userInput.getAction() + ", Row: " + userInput.getRow() + ", Column: " + userInput.getColumn());
-    }
 }

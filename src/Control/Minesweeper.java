@@ -1,19 +1,15 @@
 package Control;
 
 import Model.Field;
-import Model.GameState;
 import View.DrawField;
 import enums.CellType;
-
-import javax.management.DescriptorRead;
-import java.lang.constant.ModuleDesc;
 
 public class Minesweeper {
     private Field field;
     private UserInput input;
     private DrawField draw;
     public Minesweeper() {
-        UserInput input = new UserInput();
+        this.input = new UserInput();
         input.selectDifficultyLevel();
         String difficulty = input.getDifficulty();
         if (difficulty.equals("hard"))
@@ -27,7 +23,6 @@ public class Minesweeper {
         else
         {
             this.field = new Field(10,10,10);
-
         }
         field.generateField();
         DrawField draw = new DrawField(field);
@@ -54,7 +49,6 @@ public class Minesweeper {
     }
     public void drawField()
     {
-        DrawField draw = new DrawField(field);
         draw.drawField();
     }
     public void flagTile()

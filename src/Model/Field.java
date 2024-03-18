@@ -13,7 +13,7 @@ public class Field {
     protected int height;
     protected int width;
     protected int numberOfMines;
-    protected int numberOfOpendCells = 0;
+    protected int numberOfOpendCells;
     protected GameState state;
     protected Tile[][] field;
 
@@ -21,6 +21,7 @@ public class Field {
     public Field(int height, int width, int numberOfMines) {
         this.height = height;
         this.width = width;
+        this.numberOfOpendCells = 0;
         this.numberOfMines = numberOfMines;
         state = GameState.RUNNING;
     }

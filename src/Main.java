@@ -1,7 +1,7 @@
 import Control.Minesweeper;
 import Control.UserInput;
 import Model.Field;
-import Model.GameState;
+import enums.GameState;
 
 
 public class Main {
@@ -10,12 +10,9 @@ public class Main {
 
     public static void main(String[] args) {
         Minesweeper minesweeper = new Minesweeper();
-        while(minesweeper.getField().getState().equals(GameState.RUNNING)){
-            minesweeper.getInput().getUserInput();
+        while(minesweeper.getField().getState() == GameState.RUNNING){
             if(minesweeper.getAction().equals("flag") ){
                 minesweeper.flagTile();
-
-
             }
             else if (minesweeper.getAction().equals("unflag")) {
                 minesweeper.unFlagTile();
@@ -24,7 +21,7 @@ public class Main {
             else if (minesweeper.getAction().equals("reveal")) {
                 minesweeper.revealTile();
             }
-
+            minesweeper.drawField();
         }
 
     }
