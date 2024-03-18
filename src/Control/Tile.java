@@ -41,11 +41,13 @@ public class Tile {
 
     public void flag()
     {
-        flagged = true;
+        if (!isRevealed())
+            flagged = true;
     }
     public void unFlag()
     {
-        flagged = false;
+        if(isFlagged())
+            flagged = false;
     }
 
     public boolean isRevealed() {

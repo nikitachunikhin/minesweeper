@@ -25,6 +25,10 @@ public class Field {
         state = GameState.RUNNING;
     }
 
+    public void changeStateToLoss()
+    {
+        state = GameState.LOSE;
+    }
     public Tile[][] getField() {
         return field;
     }
