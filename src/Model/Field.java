@@ -141,6 +141,10 @@ public class Field {
         }
     }
 
+    public GameState getState(){
+        return state;
+    }
+
     public static void main(String[] args) {
         Field fc = new Field(5, 10, 5);
         fc.generateField();

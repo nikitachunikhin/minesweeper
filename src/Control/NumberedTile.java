@@ -6,7 +6,7 @@ public class NumberedTile extends Tile{
     private int numberOfAdjacentMines;
     protected CellType type;
 
-    public NumberedTile(int x, int y, int umberOfAdjacentMines) {
+    public NumberedTile(int x, int y, int numberOfAdjacentMines) {
         super(x, y);
         this.numberOfAdjacentMines = numberOfAdjacentMines;
         type = CellType.NUMBERED;
