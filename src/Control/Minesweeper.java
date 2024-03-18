@@ -5,6 +5,7 @@ import Model.GameState;
 import View.DrawField;
 
 import javax.management.DescriptorRead;
+import java.lang.constant.ModuleDesc;
 
 public class Minesweeper {
     private Field field;
@@ -13,8 +14,8 @@ public class Minesweeper {
     public Minesweeper()
     {
         UserInput input = new UserInput();
-        String difficulty = input.getDifficultyLevel();
-
+        input.selectDifficultyLevel();
+        String difficulty = input.getDifficulty();
         if (difficulty.equals("hard"))
         {
             this.field = new Field(16, 30, 99);
@@ -28,11 +29,12 @@ public class Minesweeper {
             this.field = new Field(10,10,10);
 
         }
+        field.generateField();
         DrawField draw = new DrawField(field);
         draw.drawField();
-        while (field.getState().equals(GameState.WON))
-        {
-            input.getUserInput();
-        }
+    }
+
+    public static void main(String[] args) {
+        Minesweeper mc = new Minesweeper();
     }
 }
