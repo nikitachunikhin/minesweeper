@@ -23,13 +23,13 @@ public class Field {
         return field;
     }
 
-    public void changeGameStatus(Gamestate newState) {
-        state = GameState.newState;
+    public void changeGameStatus(GameState newState) {
+        state = newState;
     }
 
 
     public Tile getTile(int x, int y) {
-
+        return field[x][y];
     }
 
     public int[][] generateMines(int numberOfMines) {
@@ -38,7 +38,6 @@ public class Field {
 
     public Tile[][] getNeighboursTiles(int x, int y) {
         Tile[][] surroundingTiles = new Tile[3][3];
-
         // Adjusted logic for assigning neighbors correctly
         int[] dx = {-1, 0, 1};
         int[] dy = {-1, 0, 1};

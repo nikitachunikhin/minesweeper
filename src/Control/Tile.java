@@ -1,7 +1,6 @@
 package Control;
 import Model.Field;
 import enums.CellType;
-
 import java.sql.Array;
 
 public class Tile {
@@ -11,6 +10,7 @@ public class Tile {
     protected int y;
     protected CellType type;
     protected int[][] neighbours;
+    protected Field field;
 
     public Tile(int x, int y) {
         this.x = x;
@@ -26,7 +26,7 @@ public class Tile {
         }
         else {
             revealed = true;
-            Tile[][] neighbours = Field.getNeighboursTiles(this.getX(), this.getY()); // load in the array of surrounding tiles
+            Tile[][] neighbours = field.getNeighboursTiles(this.getX(), this.getY()); // load in the array of surrounding tiles
 
             for (Tile[] row : neighbours) {
                 for (Tile tile : row) {
@@ -43,7 +43,7 @@ public class Tile {
     {
         flagged = true;
     }
-    public void unflag()
+    public void unFlag()
     {
         flagged = false;
     }
