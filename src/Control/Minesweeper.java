@@ -53,6 +53,11 @@ public class Minesweeper {
             field.changeStateToLoss();
         }
     }
+    public void drawField()
+    {
+        DrawField draw = new DrawField(field);
+        draw.drawField();
+    }
     public void flagTile()
     {
         int x = Integer.valueOf(input.getColumn());

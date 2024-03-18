@@ -8,8 +8,6 @@ public class Main {
     private int row;
     private int column;
 
-
-
     public static void main(String[] args) {
         Minesweeper minesweeper = new Minesweeper();
         while(minesweeper.getField().getState().equals(GameState.RUNNING)){
