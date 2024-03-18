@@ -52,8 +52,7 @@ public class Field {
                         count += 1;
                     }
                 }
-                if (count > 0)
-                {
+                if (count > 0 && !(field[y][x] instanceof Mine)) {
                     field[y][x] = new NumberedTile(x, y, count);
                 }
             }
@@ -130,6 +129,15 @@ public class Field {
         }
         return surroundingTiles;
     }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
     public void printField()
     {
         for (int y = 0; y < height; y++) {
