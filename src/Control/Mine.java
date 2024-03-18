@@ -13,4 +13,11 @@ public class Mine extends Tile{
         System.out.println("Game over! You open a mine.");
         return true;
     }
+    public String draw()
+    {
+        return "*";
+    }
+    public CellType getType() {
+        return type;
+    }
 }

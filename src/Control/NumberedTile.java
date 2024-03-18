@@ -22,4 +22,11 @@ public class NumberedTile extends Tile{
             return true;
         }
     }
+    public String draw()
+    {
+        return String.valueOf(NumberOfAdjecentMines);
+    }
+    public CellType getType() {
+        return type;
+    }
 }
