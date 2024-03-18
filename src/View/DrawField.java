@@ -5,11 +5,11 @@ import Control.Tile;
 
 public class DrawField {
     private Field field;
-    public DrawField(int height, int width, int numberOfMines)
+    public DrawField(Field field)
     {
-        Field field = new Field(height, width, numberOfMines);
+        this.field = field;
     }
-    public void drawField(Field field)
+    public void drawField()
     {
         Tile[][] map = field.getField();
         for (int y = 0; y < field.getHeight(); y++) {

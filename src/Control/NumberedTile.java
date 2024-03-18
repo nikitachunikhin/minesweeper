@@ -24,7 +24,14 @@ public class NumberedTile extends Tile{
     }
     public String draw()
     {
-        return String.valueOf(numberOfAdjacentMines);
+        if (isRevealed())
+        {
+            return String.valueOf(numberOfAdjacentMines);
+        }
+        else
+        {
+            return "-";
+        }
     }
     public CellType getType() {
         return type;

@@ -23,7 +23,6 @@ public class Field {
         this.width = width;
         this.numberOfMines = numberOfMines;
         state = GameState.RUNNING;
-
     }
 
     public Tile[][] getField() {

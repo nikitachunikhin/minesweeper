@@ -72,6 +72,13 @@ public class Tile {
     }
     public String draw()
     {
-        return ".";
+        if (isRevealed())
+        {
+            return ".";
+        }
+        else
+        {
+            return "-";
+        }
     }
 }

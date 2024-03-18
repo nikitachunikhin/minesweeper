@@ -15,7 +15,14 @@ public class Mine extends Tile{
     }
     public String draw()
     {
-        return "*";
+        if (isRevealed())
+        {
+            return "*";
+        }
+        else
+        {
+            return "-";
+        }
     }
     public CellType getType() {
         return type;

@@ -1,6 +1,7 @@
 package Control;
 
 import Model.Field;
+import Model.GameState;
 import View.DrawField;
 
 import javax.management.DescriptorRead;
@@ -12,23 +13,26 @@ public class Minesweeper {
     public Minesweeper()
     {
         UserInput input = new UserInput();
-        difficulty = input.
-        if (difficulty.equals("difficult"))
+        String difficulty = input.getDifficultyLevel();
+
+        if (difficulty.equals("hard"))
         {
-            DrawField draw = new DrawField(16, 30, 99);
+            this.field = new Field(16, 30, 99);
         }
         else if(difficulty.equals("medium"))
         {
-            DrawField draw = new DrawField(16,16,40);
-        }
-        else if(difficulty.equals("easy"))
-        {
-            DrawField draw = new DrawField(10,10,10);
+            this.field = new Field(16,16,40);
         }
         else
         {
-            System.out.println("We do not have this level of difficulty");
-        }
+            this.field = new Field(10,10,10);
 
+        }
+        DrawField draw = new DrawField(field);
+        draw.drawField();
+        while (field.getState().equals(GameState.WON))
+        {
+            input.getUserInput();
+        }
     }
 }

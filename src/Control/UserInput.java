@@ -19,12 +19,12 @@ public class UserInput {
 
     }
 
-    public Difficulty getDifficultyLevel() {
+    public String getDifficultyLevel() {
         System.out.println("Select difficulty level (easy, medium, hard):");
         while (true) {
             String input = scanner.nextLine().toUpperCase();
             try {
-                return Difficulty.valueOf(input);
+                return input;
             } catch (IllegalArgumentException e) {
                 System.out.println("Invalid difficulty. Please select from easy, medium, or hard:");
             }
